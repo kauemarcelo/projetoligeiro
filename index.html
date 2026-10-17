@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rodrigues Personal Trainer | Consultoria On-line</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#e50914',
+              darkred: '#b80710',
+              black: '#0a0a0a',
+              card: '#141414',
+              border: '#2a2a2a',
+              gray: '#a0a0a0'
+            }
+          },
+          fontFamily: {
+            title: ['Bebas Neue', 'sans-serif'],
+            sans: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glow-red {
+      box-shadow: 0 0 25px rgba(229, 9, 20, 0.35);
+    }
+    .glow-red-sm {
+      box-shadow: 0 0 10px rgba(229, 9, 20, 0.2);
+    }
+    .bg-grid {
+      background-image: radial-gradient(rgba(229, 9, 20, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .text-stroke {
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-white font-sans antialiased selection:bg-brand-red selection:text-white pb-20 md:pb-0">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-brand-black/90 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="#hero" class="nav-link flex flex-col group">
+        <span class="font-title text-3xl tracking-wider text-white group-hover:text-brand-red transition-colors">
+          RODRIGUES
+        </span>
+        <span class="text-[10px] tracking-[0.25em] text-brand-gray -mt-1 font-semibold uppercase">
+          Personal Trainer • CREF: 185643-G/SP
+        </span>
+      </a>
+
+      <!-- DESKTOP MENU -->
+      <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm tracking-wider uppercase">
+        <a href="#beneficios" class="nav-link text-gray-300 hover:text-brand-red transition-colors">O Que Recebe</a>
+        <a href="#para-quem" class="nav-link text-gray-300 hover:text-brand-red transition-colors">Para Quem É</a>
+        <a href="#locais" class="nav-link text-gray-300 hover:text-brand-red transition-colors">Onde Treinar</a>
+        <a href="#calculadora" class="nav-link text-gray-300 hover:text-brand-red transition-colors">Simulador</a>
+        <a href="#planos" class="nav-link text-gray-300 hover:text-brand-red transition-colors">Planos</a>
+      </nav>
+
+      <!-- SOCIAL & CTA NAVBAR -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://www.instagram.com/96.rodrigues?xtok=MWI4c2VzZ29pYXdyZQ==" target="_blank" rel="noopener noreferrer" 
+           class="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-gray-300 hover:text-white hover:border-brand-red hover:bg-brand-red/20 transition-all">
+          <i class="fab fa-instagram text-lg"></i>
+        </a>
+        <a href="https://wa.me/5511983597060?text=Olá%20Rodrigues!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Consultoria%20On-line." 
+           target="_blank" rel="noopener noreferrer"
+           class="bg-brand-red hover:bg-brand-darkred text-white font-bold px-5 py-2.5 rounded-lg text-xs tracking-wider uppercase transition-all shadow-lg hover:scale-105 flex items-center gap-2">
+          <i class="fab fa-whatsapp text-base"></i> Falar Agora
+        </a>
+      </div>
+
+      <!-- MOBILE MENU BUTTON -->
+      <button id="menu-btn" aria-label="Abrir menu" class="md:hidden text-2xl text-white focus:outline-none p-2">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- MOBILE MENU DROPDOWN -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-6 py-6 space-y-4 font-semibold text-sm uppercase">
+      <a href="#beneficios" class="nav-link block text-gray-300 hover:text-brand-red">O Que Recebe</a>
+      <a href="#para-quem" class="nav-link block text-gray-300 hover:text-brand-red">Para Quem É</a>
+      <a href="#locais" class="nav-link block text-gray-300 hover:text-brand-red">Onde Treinar</a>
+      <a href="#calculadora" class="nav-link block text-gray-300 hover:text-brand-red">Simulador</a>
+      <a href="#planos" class="nav-link block text-gray-300 hover:text-brand-red">Planos</a>
+      <div class="pt-4 border-t border-brand-border flex items-center justify-between">
+        <a href="https://www.instagram.com/96.rodrigues?xtok=MWI4c2VzZ29pYXdyZQ==" target="_blank" class="text-gray-300 hover:text-brand-red flex items-center gap-2">
+          <i class="fab fa-instagram text-lg"></i> @96.rodrigues
+        </a>
+        <a href="https://wa.me/5511983597060?text=Olá%20Rodrigues!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20Consultoria%20On-line." target="_blank" class="bg-brand-red text-white px-4 py-2 rounded font-bold text-xs">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 bg-grid overflow-hidden scroll-mt-20">
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-black/40 via-brand-black/80 to-brand-black pointer-events-none"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 text-center z-10 flex flex-col items-center">
+      
+      <!-- BADGE CREF -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-card border border-brand-red/40 text-brand-red text-xs font-bold tracking-widest uppercase mb-6 glow-red-sm">
+        <i class="fas fa-certificate"></i> CREF: 185643-G/SP
+      </div>
+
+      <!-- MAIN HEADER -->
+      <h1 class="font-title text-6xl sm:text-8xl lg:text-9xl tracking-tight leading-none text-white mb-2">
+        CONSULTORIA <span class="text-brand-red">ON-LINE</span>
+      </h1>
+
+      <!-- SUBTITLE / TRIAD -->
+      <div class="flex items-center justify-center gap-3 sm:gap-6 text-sm sm:text-xl font-bold tracking-widest uppercase text-gray-300 mb-8">
+        <span>TREINO</span>
+        <span class="text-brand-red">•</span>
+        <span>ESTRATÉGIA</span>
+        <span class="text-brand-red">•</span>
+        <span>RESULTADOS</span>
+      </div>
+
+      <p class="max-w-2xl text-gray-400 text-sm sm:text-lg mb-10 leading-relaxed">
+        Transforme o seu corpo com um acompanhamento individualizado de alta intensidade, adaptado ao seu ritmo de vida e objetivos específicos.
+      </p>
+
+      <!-- HERO BUTTONS -->
+      <div class="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-md">
+        <a href="https://wa.me/5511983597060?text=Olá%20Rodrigues!%20Quero%20começar%20minha%20Consultoria%20On-line!" 
+           target="_blank" rel="noopener noreferrer"
+           class="bg-brand-red hover:bg-brand-darkred text-white font-extrabold px-8 py-4 rounded-xl text-base tracking-wider uppercase transition-all shadow-xl hover:scale-105 flex items-center justify-center gap-3 glow-red">
+          <i class="fab fa-whatsapp text-2xl"></i> Começar Agora
+        </a>
+        <a href="#planos" class="nav-link bg-brand-card hover:bg-zinc-800 text-white font-bold px-8 py-4 rounded-xl text-base tracking-wider uppercase border border-brand-border transition-all flex items-center justify-center">
+          Ver Planos
+        </a>
+      </div>
+
+      <!-- HIGHLIGHT SLOGAN -->
+      <div class="mt-16 p-6 rounded-2xl bg-brand-card/60 border border-brand-border backdrop-blur max-w-2xl w-full">
+        <p class="font-title text-2xl sm:text-3xl tracking-wide text-white">
+          SEU OBJETIVO. NOSSO <span class="text-brand-red">COMPROMISSO.</span>
+        </p>
+        <p class="text-xs sm:text-sm text-brand-gray tracking-widest font-semibold uppercase mt-1">VAMOS JUNTOS!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ RECEBE (BENEFÍCIOS) -->
+  <section id="beneficios" class="py-20 bg-brand-black border-t border-brand-border/50 relative scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-brand-red text-xs font-bold tracking-widest uppercase bg-brand-red/10 px-3 py-1 rounded border border-brand-red/20">Metodologia</span>
+        <h2 class="font-title text-4xl sm:text-6xl text-white mt-3">O QUE VOCÊ RECEBE:</h2>
+        <div class="w-16 h-1 bg-brand-red mx-auto mt-2"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- CARD 1 -->
+        <div class="bg-brand-card border border-brand-border p-8 rounded-2xl hover:border-brand-red/60 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="font-title text-2xl text-white mb-2">TREINO PERSONALIZADO</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            100% individualizado para você, respeitando as suas limitações, rotina e metas.
+          </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="bg-brand-card border border-brand-border p-8 rounded-2xl hover:border-brand-red/60 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h3 class="font-title text-2xl text-white mb-2">ACOMPANHAMENTO DIÁRIO</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Suporte direto via WhatsApp e ajustes na ficha sempre que você precisar.
+          </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bg-brand-card border border-brand-border p-8 rounded-2xl hover:border-brand-red/60 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="font-title text-2xl text-white mb-2">EVOLUÇÃO CONTÍNUA</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Análise frequente do seu progresso, carga e adaptações constantes para evitar estagnação.
+          </p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bg-brand-card border border-brand-border p-8 rounded-2xl hover:border-brand-red/60 transition-all duration-300 group hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-brand-red/10 border border-brand-red/30 text-brand-red flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-red group-hover:text-white transition-all">
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="font-title text-2xl text-white mb-2">FOCO EM RESULTADOS</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Mais estratégia e mais desempenho para atingir a sua melhor versão no menor tempo seguro.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM É -->
+  <section id="para-quem" class="py-20 bg-zinc-950 relative scroll-mt-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-brand-card via-zinc-900 to-brand-card border border-brand-red/40 rounded-3xl p-8 sm:p-12 relative overflow-hidden glow-red-sm">
+        
+        <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+          <div class="w-20 h-20 rounded-2xl bg-brand-red flex-shrink-0 flex items-center justify-center text-white text-4xl shadow-lg">
+            <i class="fas fa-users"></i>
+          </div>
+          <div>
+            <span class="text-brand-red font-bold text-xs tracking-widest uppercase">Público Alvo</span>
+            <h2 class="font-title text-3xl sm:text-5xl text-white mt-1 mb-4">PARA QUEM É:</h2>
+            <p class="text-gray-300 text-base sm:text-xl font-medium leading-relaxed">
+              Para todos os tipos de pessoas que buscam <strong class="text-white border-b-2 border-brand-red">resultados com segurança</strong>, qualidade e acompanhamento exclusivo de um profissional credenciado.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TREINE EM QUALQUER LUGAR -->
+  <section id="locais" class="py-20 bg-brand-black scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-brand-red text-xs font-bold tracking-widest uppercase bg-brand-red/10 px-3 py-1 rounded border border-brand-red/20">Flexibilidade Total</span>
+        <h2 class="font-title text-4xl sm:text-6xl text-white mt-3">TREINE EM QUALQUER LUGAR</h2>
+        <div class="w-16 h-1 bg-brand-red mx-auto mt-2"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- CASA -->
+        <div class="bg-brand-card border border-brand-border rounded-2xl p-8 text-center hover:border-brand-red transition-all group">
+          <div class="w-20 h-20 mx-auto rounded-full bg-zinc-900 border border-brand-border flex items-center justify-center text-brand-red text-3xl mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3 class="font-title text-3xl text-white mb-2">EM CASA</h3>
+          <p class="text-gray-400 text-sm">Treinos eficientes utilizando o peso do corpo ou equipamentos básicos que você já possui.</p>
+        </div>
+
+        <!-- ACADEMIA -->
+        <div class="bg-brand-card border border-brand-border rounded-2xl p-8 text-center hover:border-brand-red transition-all group">
+          <div class="w-20 h-20 mx-auto rounded-full bg-zinc-900 border border-brand-border flex items-center justify-center text-brand-red text-3xl mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all">
+            <i class="fas fa-dumbbell"></i>
+          </div>
+          <h3 class="font-title text-3xl text-white mb-2">NA ACADEMIA</h3>
+          <p class="text-gray-400 text-sm">Fichas estruturadas com divisão de treino ideal, séries, repetições e vídeos explicativos.</p>
+        </div>
+
+        <!-- AO AR LIVRE -->
+        <div class="bg-brand-card border border-brand-border rounded-2xl p-8 text-center hover:border-brand-red transition-all group">
+          <div class="w-20 h-20 mx-auto rounded-full bg-zinc-900 border border-brand-border flex items-center justify-center text-brand-red text-3xl mb-6 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all">
+            <i class="fas fa-tree"></i>
+          </div>
+          <h3 class="font-title text-3xl text-white mb-2">AO AR LIVRE</h3>
+          <p class="text-gray-400 text-sm">Rotinas funcionais e dinâmicas para praticar em parques ou espaços abertos.</p>
+        </div>
+
+      </div>
+
+      <!-- DIFFERENTIALS STRIP -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-zinc-900/80 border border-brand-border p-6 rounded-xl flex items-center gap-4">
+          <div class="text-brand-red text-3xl"><i class="fas fa-clock"></i></div>
+          <div>
+            <h4 class="font-bold text-white uppercase text-sm">Suporte 24 Horas</h4>
+            <p class="text-xs text-gray-400">Todos os dias para tirar dúvidas e te manter focado.</p>
+          </div>
+        </div>
+        <div class="bg-zinc-900/80 border border-brand-border p-6 rounded-xl flex items-center gap-4">
+          <div class="text-brand-red text-3xl"><i class="fas fa-credit-card"></i></div>
+          <div>
+            <h4 class="font-bold text-white uppercase text-sm">Planos Acessíveis</h4>
+            <p class="text-xs text-gray-400">Invista na sua saúde sem pesar no seu bolso.</p>
+          </div>
+        </div>
+        <div class="bg-zinc-900/80 border border-brand-border p-6 rounded-xl flex items-center gap-4">
+          <div class="text-brand-red text-3xl"><i class="fas fa-rocket"></i></div>
+          <div>
+            <h4 class="font-bold text-white uppercase text-sm">Comece Agora</h4>
+            <p class="text-xs text-gray-400">Seu resultado começa com a decisão de hoje.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALCULADORA / SIMULADOR INTERATIVO -->
+  <section id="calculadora" class="py-20 bg-zinc-950 border-t border-brand-border scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-10 shadow-2xl">
+        
+        <div class="text-center mb-8">
+          <span class="text-brand-red text-xs font-bold tracking-widest uppercase">Diagnóstico Rápido</span>
+          <h2 class="font-title text-3xl sm:text-5xl text-white mt-1">SIMULE SEU PLANO DE TREINO</h2>
+          <p class="text-gray-400 text-sm mt-2">Preencha os dados abaixo e envie diretamente para o Rodrigues pelo WhatsApp</p>
+        </div>
+
+        <form id="simulador-form" onsubmit="enviarSimulacao(event)" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Seu Nome</label>
+              <input type="text" id="sim-nome" required placeholder="Ex: João Silva" 
+                     class="w-full bg-zinc-900 border border-brand-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-red text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Seu Objetivo</label>
+              <select id="sim-objetivo" class="w-full bg-zinc-900 border border-brand-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-red text-sm">
+                <option value="Emagrecimento / Definição">Emagrecimento / Definição</option>
+                <option value="Hipertrofia / Ganho de Massa">Hipertrofia / Ganho de Massa</option>
+                <option value="Condicionamento Físico">Condicionamento Físico</option>
+                <option value="Saúde e Qualidade de Vida">Saúde e Qualidade de Vida</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Onde pretende treinar?</label>
+              <select id="sim-local" class="w-full bg-zinc-900 border border-brand-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-red text-sm">
+                <option value="Na Academia">Na Academia</option>
+                <option value="Em Casa">Em Casa</option>
+                <option value="Ao Ar Livre">Ao Ar Livre</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Frequência Semanal</label>
+              <select id="sim-frequencia" class="w-full bg-zinc-900 border border-brand-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-red text-sm">
+                <option value="3 dias por semana">3 dias por semana</option>
+                <option value="4 a 5 dias por semana">4 a 5 dias por semana</option>
+                <option value="6 dias por semana">6 dias por semana</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full bg-brand-red hover:bg-brand-darkred text-white font-extrabold py-4 rounded-xl text-base tracking-wider uppercase transition-all shadow-lg glow-red flex items-center justify-center gap-2">
+            <i class="fab fa-whatsapp text-xl"></i> Receber Diagnóstico Gratuito
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANOS -->
+  <section id="planos" class="py-20 bg-brand-black scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-brand-red text-xs font-bold tracking-widest uppercase bg-brand-red/10 px-3 py-1 rounded border border-brand-red/20">Invista em Você</span>
+        <h2 class="font-title text-4xl sm:text-6xl text-white mt-3">PLANOS DE CONSULTORIA</h2>
+        <p class="text-gray-400 text-sm mt-2">Escolha o plano ideal para atingir as suas metas</p>
+        <div class="w-16 h-1 bg-brand-red mx-auto mt-2"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- PLANO MENSAL -->
+        <div class="bg-brand-card border border-brand-border rounded-3xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-all">
+          <div>
+            <h3 class="font-title text-3xl text-white mb-2">MENSAL</h3>
+            <p class="text-xs text-gray-400 mb-6 uppercase tracking-wider">Para quem quer experimentar</p>
+            <div class="mb-8">
+              <span class="text-4xl font-extrabold text-white">R$ 119,90</span>
+              <span class="text-xs text-gray-400">/mês</span>
+            </div>
+            <ul class="space-y-4 text-sm text-gray-300 mb-8">
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Treino 100% Personalizado</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Suporte via WhatsApp</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Vídeos demonstrativos</li>
+              <li class="flex items-center gap-3 text-gray-500"><i class="fas fa-times"></i> Reavaliação mensal incluída</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511983597060?text=Olá%20Rodrigues!%20Tenho%20interesse%20no%20Plano%20Mensal." target="_blank" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3.5 rounded-xl text-center uppercase tracking-wider text-xs transition-all border border-zinc-700">
+            Assinar Mensal
+          </a>
+        </div>
+
+        <!-- PLANO TRIMESTRAL (RECOMENDADO) -->
+        <div class="bg-gradient-to-b from-brand-card to-zinc-900 border-2 border-brand-red rounded-3xl p-8 flex flex-col justify-between relative shadow-2xl glow-red-sm transform md:-translate-y-4">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-red text-white text-[10px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest shadow">
+            Mais Popular
+          </div>
+          <div>
+            <h3 class="font-title text-4xl text-white mb-2 mt-2">TRIMESTRAL</h3>
+            <p class="text-xs text-brand-red font-semibold mb-6 uppercase tracking-wider">Foco total em transformações</p>
+            <div class="mb-8">
+              <span class="text-5xl font-extrabold text-white">R$ 89,90</span>
+              <span class="text-xs text-gray-400">/mês</span>
+            </div>
+            <ul class="space-y-4 text-sm text-gray-200 mb-8">
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Treino 100% Personalizado</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Suporte Prioritário 24h</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Vídeos demonstrativos</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Ajustes e Reavaliações contínuas</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511983597060?text=Olá%20Rodrigues!%20Quero%20aproveitar%20a%20oferta%20do%20Plano%20Trimestral." target="_blank" class="w-full bg-brand-red hover:bg-brand-darkred text-white font-extrabold py-4 rounded-xl text-center uppercase tracking-wider text-xs transition-all shadow-lg glow-red">
+            Garantir Vaga Trimestral
+          </a>
+        </div>
+
+        <!-- PLANO SEMESTRAL -->
+        <div class="bg-brand-card border border-brand-border rounded-3xl p-8 flex flex-col justify-between hover:border-zinc-700 transition-all">
+          <div>
+            <h3 class="font-title text-3xl text-white mb-2">SEMESTRAL</h3>
+            <p class="text-xs text-gray-400 mb-6 uppercase tracking-wider">Estilo de vida definitivo</p>
+            <div class="mb-8">
+              <span class="text-4xl font-extrabold text-white">R$ 69,90</span>
+              <span class="text-xs text-gray-400">/mês</span>
+            </div>
+            <ul class="space-y-4 text-sm text-gray-300 mb-8">
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Treino 100% Personalizado</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Suporte VIP contínuo</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Acompanhamento de metas de longo prazo</li>
+              <li class="flex items-center gap-3"><i class="fas fa-check text-brand-red"></i> Planejamento de periodização anual</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5511983597060?text=Olá%20Rodrigues!%20Quero%20saber%20mais%20sobre%20o%20Plano%20Semestral." target="_blank" class="w-full bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3.5 rounded-xl text-center uppercase tracking-wider text-xs transition-all border border-zinc-700">
+            Assinar Semestral
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer id="contato" class="bg-zinc-950 border-t border-brand-border py-12 text-center text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-6">
+      
+      <div>
+        <h2 class="font-title text-3xl text-white tracking-wider">RODRIGUES PERSONAL TRAINER</h2>
+        <p class="text-brand-red font-semibold tracking-widest text-[10px] uppercase mt-1">CREF: 185643-G/SP</p>
+      </div>
+
+      <!-- REDES SOCIAIS FOOTER -->
+      <div class="flex items-center space-x-6">
+        <a href="https://www.instagram.com/96.rodrigues?xtok=MWI4c2VzZ29pYXdyZQ==" target="_blank" rel="noopener noreferrer" 
+           class="w-12 h-12 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-xl text-white hover:text-brand-red hover:border-brand-red transition-all">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/5511983597060?text=Olá%20Rodrigues!" target="_blank" rel="noopener noreferrer" 
+           class="w-12 h-12 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-xl text-white hover:text-brand-red hover:border-brand-red transition-all">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <p class="max-w-md text-gray-500 text-[11px] leading-relaxed">
+        © <span id="year"></span> Rodrigues Personal Trainer. Todos os direitos reservados. <br>
+        Consultoria Fitness On-line individualizada.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5511983597060?text=Olá%20Rodrigues!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações." 
+     target="_blank" rel="noopener noreferrer" aria-label="Contato via WhatsApp"
+     class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 flex items-center justify-center glow-red-sm">
+    <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- SCRIPTS DA PÁGINA -->
+  <script>
+    // Configurar Ano Atual
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu Mobile Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Smooth Scroll para Links Internos (Sem Recarregar Página)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+          
+          // Fechar menu mobile se estiver aberto
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+        }
+      });
+    });
+
+    // Envio do Formulário do Simulador via WhatsApp
+    function enviarSimulacao(e) {
+      e.preventDefault();
+      const nome = document.getElementById('sim-nome').value;
+      const objetivo = document.getElementById('sim-objetivo').value;
+      const local = document.getElementById('sim-local').value;
+      const frequencia = document.getElementById('sim-frequencia').value;
+
+      const texto = `Olá Rodrigues! Meu nome é *${nome}*.\n\nFiz o simulador no site e gostaria de um diagnóstico:\n- *Objetivo:* ${objetivo}\n- *Local de Treino:* ${local}\n- *Frequência:* ${frequencia}`;
+      
+      const url = `https://wa.me/5511983597060?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
