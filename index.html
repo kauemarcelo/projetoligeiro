@@ -76,7 +76,6 @@
         <a href="#beneficios" class="nav-link text-gray-300 hover:text-brand-red transition-colors">O Que Recebe</a>
         <a href="#para-quem" class="nav-link text-gray-300 hover:text-brand-red transition-colors">Para Quem É</a>
         <a href="#locais" class="nav-link text-gray-300 hover:text-brand-red transition-colors">Onde Treinar</a>
-        <a href="#calculadora" class="nav-link text-gray-300 hover:text-brand-red transition-colors">Simulador</a>
         <a href="#planos" class="nav-link text-gray-300 hover:text-brand-red transition-colors">Planos</a>
         <a href="https://www.instagram.com/96.rodrigues?xtok=MWI4c2VzZ29pYXdyZQ==" target="_blank" rel="noopener noreferrer" 
            class="w-10 h-10 rounded-full bg-brand-card border border-brand-border flex items-center justify-center text-gray-300 hover:text-white hover:border-brand-red hover:bg-brand-red/20 transition-all">
@@ -108,7 +107,6 @@
       <a href="#beneficios" class="nav-link block text-gray-300 hover:text-brand-red">O Que Recebe</a>
       <a href="#para-quem" class="nav-link block text-gray-300 hover:text-brand-red">Para Quem É</a>
       <a href="#locais" class="nav-link block text-gray-300 hover:text-brand-red">Onde Treinar</a>
-      <a href="#calculadora" class="nav-link block text-gray-300 hover:text-brand-red">Simulador</a>
       <a href="#planos" class="nav-link block text-gray-300 hover:text-brand-red">Planos</a>
       <a href="https://app.mfitpersonal.com.br/client" target="_blank" rel="noopener noreferrer" class="block border border-brand-red text-white text-center py-3 rounded-lg font-bold hover:bg-brand-red transition-all">
         <i class="fas fa-user-circle mr-1"></i> Portal do Aluno
@@ -330,60 +328,6 @@
     </div>
   </section>
 
-  <!-- CALCULADORA / SIMULADOR INTERATIVO -->
-  <section id="calculadora" class="py-20 bg-zinc-950 border-t border-brand-border scroll-mt-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-10 shadow-2xl">
-        
-        <div class="text-center mb-8">
-          <span class="text-brand-red text-xs font-bold tracking-widest uppercase">Diagnóstico Rápido</span>
-          <h2 class="font-title text-3xl sm:text-5xl text-white mt-1">SIMULE SEU PLANO DE TREINO</h2>
-          <p class="text-gray-400 text-sm mt-2">Preencha os dados abaixo e envie diretamente para o Rodrigues pelo WhatsApp</p>
-        </div>
-
-        <form id="simulador-form" onsubmit="enviarSimulacao(event)" class="space-y-6">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Seu Nome</label>
-              <input type="text" id="sim-nome" required placeholder="Ex: João Silva" 
-                     class="w-full bg-zinc-900 border border-brand-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-red text-sm">
-            </div>
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Seu Objetivo</label>
-              <select id="sim-objetivo" class="w-full bg-zinc-900 border border-brand-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-red text-sm">
-                <option value="Emagrecimento / Definição">Emagrecimento / Definição</option>
-                <option value="Hipertrofia / Ganho de Massa">Hipertrofia / Ganho de Massa</option>
-                <option value="Condicionamento Físico">Condicionamento Físico</option>
-                <option value="Saúde e Qualidade de Vida">Saúde e Qualidade de Vida</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Onde pretende treinar?</label>
-              <select id="sim-local" class="w-full bg-zinc-900 border border-brand-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-red text-sm">
-                <option value="Na Academia">Na Academia</option>
-                <option value="Em Casa">Em Casa</option>
-                <option value="Ao Ar Livre">Ao Ar Livre</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Frequência Semanal</label>
-              <select id="sim-frequencia" class="w-full bg-zinc-900 border border-brand-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-red text-sm">
-                <option value="3 dias por semana">3 dias por semana</option>
-                <option value="4 a 5 dias por semana">4 a 5 dias por semana</option>
-                <option value="6 dias por semana">6 dias por semana</option>
-              </select>
-            </div>
-          </div>
-
-          <button type="submit" class="w-full bg-brand-red hover:bg-brand-darkred text-white font-extrabold py-4 rounded-xl text-base tracking-wider uppercase transition-all shadow-lg glow-red flex items-center justify-center gap-2">
-            <i class="fab fa-whatsapp text-xl"></i> Receber Diagnóstico 
-          </button>
-        </form>
-
-      </div>
-    </div>
-  </section>
-
   <!-- PLANOS -->
   <section id="planos" class="py-20 bg-brand-black scroll-mt-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -537,20 +481,6 @@
         }
       });
     });
-
-    // Envio do Formulário do Simulador via WhatsApp
-    function enviarSimulacao(e) {
-      e.preventDefault();
-      const nome = document.getElementById('sim-nome').value;
-      const objetivo = document.getElementById('sim-objetivo').value;
-      const local = document.getElementById('sim-local').value;
-      const frequencia = document.getElementById('sim-frequencia').value;
-
-      const texto = `Olá Rodrigues! Meu nome é *${nome}*.\n\nFiz o simulador no site e gostaria de um diagnóstico:\n- *Objetivo:* ${objetivo}\n- *Local de Treino:* ${local}\n- *Frequência:* ${frequencia}`;
-      
-      const url = `https://wa.me/5511983597060?text=${encodeURIComponent(texto)}`;
-      window.open(url, '_blank');
-    }
   </script>
 </body>
 </html>
